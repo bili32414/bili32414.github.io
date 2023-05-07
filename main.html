@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>蒲公英创客训练营</title>
+
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+</head>
+<body>
+    
+    <header class="a1">
+        <img style="width: 40px;margin: 5px;" src="./img/pgy.png"><span style="position: absolute;;top: 10px;left: 50px;font-family: '方正姚体';font-size: 25px;">蒲公英创客训练营</span>
+			
+			<a href="index.html"><img src="./img/user.png" width="40px" style="position: absolute;right: 2%;top: 5%;" id="image"></a>
+
+    </header>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">1 / 3</div> -->
+          <img decoding="async" src="https://www.wxjsxy.com/content/main/base/img/page-banner.jpg" style="height:200px;width: 100%;">
+          <div class="text">无锡技师学院</div>
+        </div>
+       
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">2 / 3</div> -->
+          <img decoding="async" src="https://www.wxjsxy.com/upload/history/main/xywh/2012/12/201212261110440797.jpg" style="height:100%;width: 100%;">
+          <div class="text">无锡技师学院-雪</div>
+        </div>
+       
+        <div class="mySlides fade">
+          <!-- <div class="numbertext">3 / 3</div> -->
+          <img decoding="async" src="https://www.wxjsxy.com/upload/history/main/xywh/2012/12/201212261110444667.jpg" style="height: 200px;width: 100%;">
+          <div class="text">无锡技师学院-进德修业广场</div>
+        </div>
+       
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br>
+       
+      <div style="text-align:center;position: relative;top: 70px;">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+    <div style="margin: 0 auto;position: relative;top: 100px;background-color: #aaaaaaaa;width: 90%;max-width: 1000px;">
+      <p style="margin: 15px;text-align: center;">蒲公英创客训练营隶属于江苏省无锡技师学院</p>
+      <p style="margin: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;江苏省无锡技师学院(无锡市高级技术学校）坐落于美丽的太湖之滨。 2007年建成的花园式新校区位于无锡职教园区钱藕路，交通便利。占地422亩，建筑面积达到20万平方米。</p>
+      <p style="margin: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学院在校生规模5000余人，年培训规模50000余人次，学校实行全军事化管理以及教学，使学生做到自觉、自律、自强的品质，给学生的未来打下良好的基础，因此学院的就业率达到百分之九十九以上。学院实行二级管理，下设机械工程系、电气工程系、信息工程系、文化创意系、现代服务系。共设有38个专业，建有11个省级示范重点专业和26门省市级精品课程。现有数控技术、电工电子、机械制造、现代财经、信息技术、自动控制和物联网技术应用等8个校内综合实训中心，136个实验实训室和188个校外实训基地，3个江苏省高技能人才专项公共实训基地。</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const searchParams = new URLSearchParams(window.location.search); 
+        var username = getParameterByName("name");
+
+        document.getElementById("image").title = username + "\n" + "(点击退出)";
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
+ 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+ 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+ 
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+</body>
+</html>
