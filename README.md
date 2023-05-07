@@ -1,7 +1,6 @@
 # zijiang.github.io
 练习文件(Exercise Files)
 
-<<<<<<< HEAD
 ________________________________
 
 ## 这是什么项目?
@@ -21,4 +20,3 @@ __________________________________________________
 ### What is the purpose of this project?
 <br />
 It's just an exercise project
->>>>>>> 486c55ce62ff7e7946754bb70153f8975424e96b
