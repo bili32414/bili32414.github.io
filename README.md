@@ -1,22 +1,29 @@
-# zijiang.github.io
-练习文件(Exercise Files)
-
+# zijiang.github.io  
+练习文件(Exercise Files)  
 ________________________________
+## Q&A
+Q: 这是什么项目?  
+A: 只是个练习项目  
+   
+Q: What's this proje?  
+A: It's just an exercise project  
 
-## 这是什么项目?
-只是个练习项目
-
-## Q: What's this proje?
-A: It's just an exercise project
-=======
-__________________________________________________
-
-### 该项目是什么?
-
-练习项目
-<br />
-__________________________________________________
-
-### What is the purpose of this project?
-<br />
-It's just an exercise project
+Q: 如何查看当前页面版本?  
+A: 请转到网站主页(index.html)点击右上方**登录**,输入用户名和密码后点击右上角**关于**,再在页面上右键,选择**查看源代码**,版本号即在源代码页面的第一行
+  
+***
+# 使用说明
+### 前言
+1.建议使用VS Code编辑查看  
+2.网站大部分图片内容为外链,请尽量**保持有效网络连接**  
+3.大部分网站页面经过特殊加密,请不要试图爬取网站内容  
+  
+    
+      
+        
+          
+            
+              
+                
+                
+最后,祝您吉祥!
