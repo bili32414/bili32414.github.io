@@ -5,7 +5,6 @@ body{
     background-attachment: fixed;
     z-index: -999;
 
-    user-select: none;
     overflow-x: hidden;
 }
 .a1{
