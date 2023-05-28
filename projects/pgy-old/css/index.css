@@ -1,0 +1,181 @@
+/* 隐藏纵向滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 隐藏横向滚动条 */
+::-webkit-scrollbar-horizontal {
+  display: none;
+}
+
+/* 隐藏纵向滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.main{
+    background-image: url(https://picsum.photos/1920/1080);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    min-width: 800px;
+    min-height: 600px;
+}
+.header-bgi{
+  background:
+    radial-gradient(circle at 50% 0,
+      rgba(255,0,0,.5),
+      rgba(255,0,0,0) 70.71%),
+    radial-gradient(circle at 6.7% 75%,
+      rgba(0,0,255,.5),
+      rgba(0,0,255,0) 70.71%),
+    radial-gradient(circle at 93.3% 75%,
+      rgba(0,255,0,.5),
+      rgba(0,255,0,0) 70.71%) rgb(176, 255, 139);
+}
+
+.login-t:link{
+  color: black;
+  text-decoration: none;
+  background-size: 1000%;
+}
+.login-t:hover{
+  background-image: linear-gradient(45deg, #a6c0fe, #f68084, #ff6161, #ff76f8);
+  /* margin: 5px; */
+  border-radius: 50px;
+  animation: text-bgmove 5s infinite;
+}
+
+.ym{
+	width: 100%;
+	height: 50px;
+	
+	position: fixed;/*对于浏览器窗口浮动在顶部*/
+	top: 0;
+	left: 0;
+	
+	background:
+    radial-gradient(circle at 50% 0,
+      rgba(255,0,0,.5),
+      rgba(255,0,0,0) 70.71%),
+    radial-gradient(circle at 6.7% 75%,
+      rgba(0,0,255,.5),
+      rgba(0,0,255,0) 70.71%),
+    radial-gradient(circle at 93.3% 75%,
+      rgba(0,255,0,.5),
+      rgba(0,255,0,0) 70.71%) beige;
+	
+	z-index: 99;/*置顶*/
+}
+.login{
+	color: rgb(0, 0, 0);
+	
+	position: absolute;
+	top: -2px;
+	right: 10px;
+	
+}
+.dv1{
+    min-width: 300px;
+    min-height: 280px;
+    background-color: #ffffff;
+    /* border: 1px solid rgb(0, 0, 0); */
+    z-index: 10;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    bottom: 25%;
+    right: 25%;
+    background-color: rgba(204, 204, 204, 0.5);
+    /* opacity: 0.5; */
+}
+.box {
+  font-size: 40px;
+  font-family: "宋体";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(119, 119, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  animation: boxMove 5s forwards;
+  z-index: 999;
+}
+
+@keyframes boxMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  50%{
+    transform: translate(0, 0);
+    background-color: rgb(179, 179, 255);
+  }
+  100% {
+    transform: translate(0, -100%);
+    background-color: rgb(131, 250, 180);
+  }
+}
+.box-bake {
+  font-size: 40px;
+  font-family: "宋体";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  animation: boxbackMove 3s forwards;
+  z-index: 999;
+}
+
+@keyframes boxbackMove {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+    background-color: rgb(140, 140, 255);
+  }
+}
+.box-main {
+  z-index: 999;
+  font-size: 40px;
+  font-family: "宋体";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(140, 140, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  animation: boxmainMove 5s forwards;
+  z-index: 999;
+}
+
+@keyframes boxmainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  50%{
+    transform: translate(0, 0);
+    background-color: rgb(255, 239, 242);
+  }
+  100% {
+    transform: translate(100%, 0);
+    background-color: pink;
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册您的账户</title>
+        <link rel="stylesheet" href="./css/Disabled-select.css">
+        <script>
+            function checkpassworld(){
+            var username = document.getElementById("create-username").value; 
+            var password = document.getElementById("create-password").value;
+            var confirmPassword = document.getElementById("create-password-repeat").value;
+            var regex =  /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+            if (!regex.test(password)) {
+                alert("密码没有包含数字、大小写字母，且长度至少于8位,请重新输入！");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("两次输入的密码不一致，请重新输入！");
+                return false;
+            }
+            if (!document.getElementById("agree").checked) {
+                alert("请勾选同意隐私政策！");
+                return false;
+            }
+            window.location.href = `./create_success.html?create-username=${username}&create-password=${password}`;
+            return true;
+        }
+        </script>
+    </head>
+    <body style="min-height: 800px;min-width: 600px;">
+        <form action="./create_success.html" method="get">
+        <div style="position: absolute;width: 575px;height: 600px;top: 50%;left:50%;transform: translate(-50%,-50%);border: 0;background: linear-gradient(to bottom right, blue,rgb(255, 126, 126), pink);">
+            <a href="./login.html"><img src="./img/back.png" width="40px" height="40px" style="float: left;margin: 10px;" title="返回"></a>
+            <!-- 标题 -->
+            <br />
+            <h1 style="text-align: center;font-size: 40px;width: 100%;">注册</h1>
+            <!-- 标识 -->
+            <lable for="create-username"  style="margin: 50px;position: absolute;left: 20%;top: 100px;">用&nbsp;&nbsp;户&nbsp;&nbsp;名:</lable>
+            <lable for="create-password"  style="margin: 50px;position: absolute;left: 20%;top: 160px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</lable>
+            <lable for="create-password-repeat"  style="margin: 50px;position: relative;left: 20%;top: 150px;">确认密码:</lable>
+            <!-- 输入 -->
+            <input name="create-username" id="create-username" type="text" placeholder="用户名" style="border-radius: 50px;position: absolute;top: 100px;margin: 50px;left: 35%;">
+            <input name="create-password" id="create-password" type="password" placeholder="请输入密码" style="border-radius: 50px;position: absolute;top: 160px;margin: 50px;left: 35%;">
+            <input name="create-password-repeat" id="create-password-repeat" type="password" placeholder="请再次输入密码" style="border-radius: 50px;position: absolute;top: 227px;margin: 50px;left: 35%;">
+            <!-- 隐私政策 -->
+            <input type="checkbox" id="agree" style="width: 3;height: 13px;position: absolute;top: 366px;left: 175px;">
+            <p style="position: absolute;top: 350px;left:200px;">我已阅读《隐私政策》并同意</p>
+            <!-- 注册-->
+            <input type="button" onclick="checkpassworld()" style="position: absolute;bottom: 80px;width: 80px;height: 40px;left: 250px;" title="注册" value="注册"></input>
+            
+        </div>
+        </form>
+    </body>
+</html>
