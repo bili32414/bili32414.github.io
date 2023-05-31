@@ -13,14 +13,14 @@
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="../css/index.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/bg-frames.css">
+
+	<!-- <link rel="stylesheet" href="../css/Windowsloading.css"> -->
 	<title>蒲公英创客训练营</title>
 </head>
 
 <body>
 	<div id="wel" style="display: none;">
-		<strong style=" height: 100%; display: flex;
-		justify-content: center;
-		align-items: center;">Welcome</strong>
+		<strong id="welc" style="text-align: center;">Welcome</strong>
 	</div>
 
 	<div id="bake" style="display: none;"></div>
@@ -69,7 +69,7 @@
 										id="image"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></a>
 								<ul class="dropdown-menu">
 									<li>
-										<a><span id="name_2" style="user-select: none;"></span></a>
+										<a><span id="seename"></span></a>
 									</li>
 									<li>
 										<a onclick="bake()">退出</a>
@@ -178,18 +178,29 @@
 	</div>
 
 
-
-
-
-
 	<script>
 		const searchParams = new URLSearchParams(window.location.search);
 		const name = searchParams.get('name');
+		const id = searchParams.get('id');
 		const a = searchParams.get('id');
+		const welc = document.getElementById("welc");
+		const div = document.getElementById('wel');
+		var seename = document.getElementById("seename");
+		
+		// alert("jump finifh &name=" + name + "\nid=  " + id);
+		welc.innerText = "Welcome \n" + name;
 
-		// alert("账号:"+name+"  密码:"+password)
+		if (a != 1) {//判断id是否为1，如果不是的话显示欢迎
+			// alert("id= "+id)
+			div.classList.add('box');
+			document.getElementById('wel').style.display = 'block';
+		}else
 
-		document.getElementById("name_2").innerText = name;
+
+
+		seename.innerText = name;
+
+
 		document.documentElement.style.overflow = 'hidden'; // 隐藏滚动条
 		setTimeout(function () {
 			document.documentElement.style.overflow = 'auto'; // 恢复滚动条
@@ -198,11 +209,7 @@
 		function about() {
 			window.location.href = "about.html?name=" + name;
 		}
-		if (a != 1) {
-			var div = document.getElementById('wel');
-			div.classList.add('box');
-			document.getElementById('wel').style.display = 'block';
-		}
+
 		function bake() {
 			var bake = document.getElementById('bake');
 			bake.classList.add('box-bake');
