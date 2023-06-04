@@ -31,6 +31,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <title>南锣子酱</title>
+<link rel="stylesheet" href="./assets/css/index-self.css">
+
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -78,12 +80,13 @@
           <li><a class="nav-link active" href="#header">主页</a></li>
           <li><a class="nav-link" href="#about">关于作者</a></li>
           <li><a class="nav-link" href="#resume">个人能力</a></li>
+          <!-- <li><a class="nav-link" href="#services">博客</a></li> -->
           <!-- <li><a class="nav-link" href="#services">Services</a></li> -->
           <li><a class="nav-link" href="javascript:void(0);" style="cursor: not-allowed;color: #6d6d6d;"
               title="敬请期待！">服务(暂未开放)</a></li>
           <!-- <li><a class="nav-link" href="javascript:void(0);" style="cursor: not-allowed;color: #6d6d6d;"
               title="敬请期待！">个人项目</a></li> -->
-          <li><a class="nav-link" href="#portfolio">个人项目</a></li>
+          <li><a class="nav-link" href="#portfolio">博客&项目</a></li>
           <li><a class="nav-link" href="#contact">联系我</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -145,7 +148,7 @@
             </div>
           </div>
           <p>
-            
+
           </p>
         </div>
       </div>
@@ -525,7 +528,7 @@
 
     </div>
   </section><!-- End Resume Section -->
-
+  <!-- _____________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
   <!-- ======= Services Section ======= -->
   <section id="services" class="services">
     <div class="container">
@@ -601,10 +604,10 @@
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">网页</li>
-            <!-- <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">卡片</li>
-            <li data-filter=".filter-web">网站</li> -->
+            <li data-filter="*" class="filter-active">全部</li>
+            <!-- <li data-filter=".filter-app">App</li> -->
+            <li data-filter=".filter-card">博客</li>
+            <li data-filter=".filter-web">网站</li>
           </ul>
         </div>
       </div>
@@ -656,7 +659,56 @@
             </div>
           </div>
         </div> -->
+        <!-- 博客 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="./projects/blog/1/1_cover.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>拯救<red>红色</red>のC盘</h4>
+              <p>博客</p>
+              <div class="portfolio-links">
+                <a href="./projects/blog/1/1_cover.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="C盘变红怎么办？跟着一起来清理，瞬间变多20GB。"><i class="bi bi-search"></i></a>
+                <a href="./projects/blog/1/1.html" data-gallery="portfolioDetailsGallery"
+                  data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i
+                    class="bi bi-box-arrow-up-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+  <div class="portfolio-wrap">
+    <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <h4>Card 2</h4>
+      <p>Card</p>
+      <div class="portfolio-links">
+        <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+          class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
+          class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+  <div class="portfolio-wrap">
+    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <h4>Card 3</h4>
+      <p>Card</p>
+      <div class="portfolio-links">
+        <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+          class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
+          class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+      </div>
+    </div>
+  </div>
+</div> -->
+        <!-- Web -->
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
             <img src="assets/img/portfolio/web1.png" class="img-fluid" alt="">
@@ -664,8 +716,8 @@
               <h4>蒲公英创客训练营 旧</h4>
               <p>Web项目</p>
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/web1.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="蒲公英创客训练营网站（测试）旧界面"><i class="bi bi-search"></i></a>
+                <a href="assets/img/portfolio/web1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="蒲公英创客训练营网站（测试）旧界面"><i class="bi bi-search"></i></a>
                 <a href="./projects/pgy-old/index.html" title="跳转到此页面"><i class="bi bi-box-arrow-up-right"></i></a>
               </div>
             </div>
@@ -680,11 +732,10 @@
               <h4>蒲公英创客训练营 新</h4>
               <p>Web项目</p>
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/web2.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="蒲公英创客训练营网站（测试）新界面（暂未完成）"><i class="bi bi-search"></i></a>
-                <a href="javascript:void(0);" style="cursor: not-allowed;" 
-                
-                  title="蒲公英创客训练营网站（测试）新界面（暂未完成）"><i class="bi bi-box-arrow-up-right" style="color: #363636;"></i></a>
+                <a href="assets/img/portfolio/web2.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="蒲公英创客训练营网站（测试）新界面（暂未完成）"><i class="bi bi-search"></i></a>
+                <a href="javascript:void(0);" style="cursor: not-allowed;" title="蒲公英创客训练营网站（测试）新界面（暂未完成）"><i
+                    class="bi bi-box-arrow-up-right" style="color: #363636;"></i></a>
               </div>
             </div>
           </div>
@@ -697,62 +748,15 @@
               <h4>眼保健操（暂未完成）</h4>
               <p>Web项目</p>
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/web3.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="眼保健操（暂未完成）"><i class="bi bi-search"></i></a>
-                <a href="javascript:void(0);" style="cursor: not-allowed;" 
-                title="Portfolio Details"><i class="bi bi-box-arrow-up-right" style="color: #363636;"></i></a>
+                <a href="assets/img/portfolio/web3.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="眼保健操（暂未完成）"><i class="bi bi-search"></i></a>
+                <a href="javascript:void(0);" style="cursor: not-allowed;" title="Portfolio Details"><i
+                    class="bi bi-box-arrow-up-right" style="color: #363636;"></i></a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
       </div>
 

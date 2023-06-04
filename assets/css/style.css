@@ -4,6 +4,20 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+/* 隐藏纵向滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 隐藏横向滚动条 */
+::-webkit-scrollbar-horizontal {
+  display: none;
+}
+
+/* 隐藏纵向滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  display: none;
+}
 
 /*--------------------------------------------------------------
 # General
