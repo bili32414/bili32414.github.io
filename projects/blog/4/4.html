@@ -1,0 +1,207 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./4.css">
+    <link rel="stylesheet" href="../Scss/progress-bar.css">
+    <link rel="stylesheet" href="../color.css">
+    <link rel="stylesheet" href="../code.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body id="top">
+<div style="border: 1px solid pink;width: 99%;height: 99%;float: left;display: flex;position: absolute;margin-top: 0;justify-content: center;align-items: center;backdrop-filter: blur(10px);z-index: 2;" id="psdbox">
+    <div style="width: 80vw;max-width: 500px;height: 30vh;border: 0;background: #ffffff86;border-radius: 50px;box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);backdrop-filter: blur(20px);">
+        <div style="margin: 2vh;text-align: center;">
+            <p style="font-size: 3vh;margin-bottom: 3vh;">授权码</p>
+            <hr style="border: 0;height: 2px;background-color: #ffffff6d;">
+            <p style="font-size: 2vh;">你需要输入授权码以此来访问这篇文档</p>
+            <p>你可以向<a href="https://bili32414.github.io#contact">南锣子酱</a>咨询或购买授权码</p>
+            <input type="text" style="height: 3vh;width: 20%;border: 0;border-radius: 10px;" id="psd" maxlength="5"> — <input type="text" style="height: 3vh;width: 20%;border: 0;border-radius: 10px;" id="psd1" maxlength="5">
+            <br><p id="psdwrongshow" style="color: red;font-size: 2vh;">&nbsp;</p><br>
+            <button style="padding: 1vh;border: 2px solid black;border-radius: 100px;background: #ffffff;font-size: 1vh;" onclick="checkpsd()">确定</button>
+            <button style="padding: 1vh;border: 2px solid white;border-radius: 0;color: white;background-color: #000000;font-size: 1vh;" onclick="history.back()">返回</button>
+        </div>
+    </div>
+</div>
+
+    <nav id="elevator" style="z-index: 1;margin-right: 1%;">
+        <ul>
+            <li><a href="#top" style="text-align: center;">返回顶部</a></li>
+            <li><a href="#id1">测试</a></li>
+            <li><a href="#id2">测试</a></li>
+            <li><a href="#id4">测试</a></li>
+            <li><a href="#id5">测试</a></li>
+            <li style="text-align: center;"><button
+                    onclick="window.location.href='https://bili32414.github.io/#contact';">联系作者</button></li>
+
+        </ul>
+    </nav>
+    <div class="main" style="z-index: 0;">
+        <img src="https://s1.ax1x.com/2023/09/04/pPranKA.jpg" alt="封面" width="100%">
+        <div class="wenzi">
+            <h1>重新安装Windows</h1>
+            <h5>2024年3月28日</h5>
+            <bq>Windows</bq>
+            <hr />
+
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            <h3 id="id1">测试</h3>
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            <h3 id="id2">测试</h3>
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            
+            
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+
+            <p style="text-align: center;">-完-</p>
+            </p>
+            <p style="font-size: small;text-align: center;">有问题请联系作者</p>
+
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+    var WW = window.innerWidth;
+    let dis = document.getElementById("elevator")
+    if (WW < 700) {
+        dis.style.display = "none";
+        console.log(ww);
+        console.log("隐藏");
+    }
+
+</script>
+<script>
+    var elevator = document.getElementById('elevator');
+    var sections = document.querySelectorAll('div[id^="id"]');
+    var lastVisibleSection = 0;
+
+    window.addEventListener('scroll', function () {
+        var currentSection = 0;
+        for (var i = 0; i < sections.length; i++) {
+            var rect = sections[i].getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                currentSection = i + 1;
+            }
+        }
+
+        lastVisibleSection = currentSection;
+    });
+
+    elevator.addEventListener('click', function (event) {
+        event.preventDefault();
+        var target = event.target.href.split('#')[1];
+        var section = document.getElementById(target);
+        var rect = section.getBoundingClientRect();
+        window.scrollBy({
+            top: rect.top,
+            behavior: 'smooth'
+        });
+    });
+
+</script>
+<script>
+    var leftInput = document.getElementById('psd');
+  var rightInput = document.getElementById('psd1');
+
+  // 监听左边输入框的粘贴事件
+  leftInput.addEventListener('paste', function(e) {
+    e.preventDefault(); // 阻止默认的粘贴行为
+    var clipboardData = (e.originalEvent || e).clipboardData;
+    var pastedData = clipboardData.getData('text');
+    
+    // 将前五位粘贴到左边的输入框
+    leftInput.value = pastedData.substring(0, 5);
+    
+    // 如果剪贴板内容超过五位，将剩余部分粘贴到右边的输入框
+    if (pastedData.length > 5) {
+      rightInput.value = pastedData.substring(5);
+    }
+  });
+
+  // 监听右边输入框的粘贴事件
+  rightInput.addEventListener('paste', function(e) {
+    e.preventDefault(); // 阻止默认的粘贴行为
+    var clipboardData = (e.originalEvent || e).clipboardData;
+    var pastedData = clipboardData.getData('text');
+    
+    // 由于我们只允许从左边输入框粘贴到右边输入框，这里不需要进一步处理
+    // 你可以根据需要添加更多的逻辑
+  });
+
+  // 其他之前的事件监听器保持不变
+  leftInput.addEventListener('input', function() {
+    if (this.value.length >= 5) {
+      rightInput.focus();
+    }
+  });
+
+  rightInput.addEventListener('input', function() {
+    if (this.value.length === 0) {
+      leftInput.focus();
+    }
+  });
+
+  rightInput.addEventListener('blur', function() {
+    if (this.value.length === 0) {
+      leftInput.focus();
+    }
+  });
+
+
+
+
+
+
+    function checkpsd(){
+        var psdbox=document.getElementById("psdbox")
+        var tip=document.getElementById("psdwrongshow").innerHTML
+        var inp =document.getElementById("psd")
+        var inp1=document.getElementById("psd1")
+        var a=document.getElementById("psd").value
+        var b=document.getElementById("psd1").value
+        var code=a + b
+        console.log(code);
+
+
+        var hash = CryptoJS.MD5(code).toString();
+
+        // 显示 MD5 哈希值
+        console.log("原："+ code + "现：" + hash);
+        if (hash == "b0f8b3e58f093359fe1af416b5ea8ed6"){psdbox.style.display="none"}
+        else if(code == ""){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码不能为空！"}
+        else{inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码错误！"}
+    }
+</script>
+<!-- aca3d8273c2d35905792a7521778d1f9 -->
+<!-- <script>
+    function copy() {
+        // 获取要复制的代码块元素
+        var codeBlock = document.getElementById("Code");
+        var copysuccess = document.getElementById("copy-success");
+        // 创建一个新的textarea元素，并将代码块的内容赋值给它
+        var textarea = document.createElement("textarea");
+        textarea.value = codeBlock.textContent;
+
+        // 将textarea元素添加到文档中
+        document.body.appendChild(textarea);
+
+        // 选中textarea中的内容并复制到剪贴板
+        textarea.select();
+        document.execCommand("copy");
+
+        // 移除添加的textarea元素
+        document.body.removeChild(textarea);
+        copysuccess.style.visibility = "visible";
+        setTimeout(function () {
+            copysuccess.style.visibility = "hidden";
+        }, 1000);
+        // 弹出复制成功的提示
+        //   alert("代码已复制到剪贴板！");
+    }
+</script> -->
+
+</html>
