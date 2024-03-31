@@ -10,7 +10,7 @@
 </head>
 
 <body id="top">
-<div style="border: 1px solid pink;width: 99%;height: 99%;float: left;display: flex;position: absolute;margin-top: 0;justify-content: center;align-items: center;backdrop-filter: blur(10px);z-index: 2;" id="psdbox">
+<div style="border: 1px solid pink;width: 99%;height: 99%;display: flex;margin-top: 0;justify-content: center;align-items: center;backdrop-filter: blur(10px);z-index: 2;position: fixed;" id="psdbox">
     <div style="width: 80vw;max-width: 500px;height: 30vh;border: 0;background: #ffffff86;border-radius: 50px;box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);backdrop-filter: blur(20px);">
         <div style="margin: 2vh;text-align: center;">
             <p style="font-size: 3vh;margin-bottom: 3vh;">授权码</p>
@@ -205,3 +205,21 @@
 </script> -->
 
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (isMobileDevice()) {
+        // 如果是手机设备，替换页面内容
+        const content = document.getElementById('top');
+        content.innerHTML = '<p style="font-size:2vh;margin-top:50%">此页面暂不支持手机访问，请使用电脑浏览器访问。</p>';
+      } else {
+        // 如果不是手机设备，继续加载原有内容
+        // 这里不需要做任何操作，因为页面已经正常加载
+      }
+    });
+  
+    function isMobileDevice() {
+      const userAgentInfo = navigator.userAgent;
+      const mobileDevices = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgentInfo);
+      return mobileDevices;
+    }
+  </script>
