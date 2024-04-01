@@ -164,16 +164,16 @@
         var a=document.getElementById("psd").value
         var b=document.getElementById("psd1").value
         var code=a + b
-        console.log(code);
 
 
         var hash = CryptoJS.MD5(code).toString();
 
         // 显示 MD5 哈希值
-        console.log("原："+ code + "现：" + hash);
-        if (hash == "b0f8b3e58f093359fe1af416b5ea8ed6"){psdbox.style.display="none"}
-        else if(code == ""){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码不能为空！"}
-        else{inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码错误！"}
+        console.log("输入字符："+ code + "\n输入字符的md5：" + hash);
+        if (hash == "b0f8b3e58f093359fe1af416b5ea8ed6"){psdbox.style.display="none";console.log("mod5比对通过");}
+        else if(code == ""){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码不能为空！";console.log("未输入，md5比对未通过，错误代码：授权码为空");}
+        else if(code.length<10){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码位数不够，已输入"+code.length+"位";console.log("位数不满,已输入"+code.length+"位");}
+        else{inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码错误！";console.log("md5比对未通过,错误代码：授权码错误！");}
     }
 </script>
 <!-- aca3d8273c2d35905792a7521778d1f9 -->
