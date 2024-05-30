@@ -9,19 +9,19 @@
             var username = document.getElementById("create-username").value; 
             var password = document.getElementById("create-password").value;
             var confirmPassword = document.getElementById("create-password-repeat").value;
-            // var regex =  /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
-            // if (!regex.test(password)) {
-            //     alert("密码没有包含数字、大小写字母，且长度至少于8位,请重新输入！");
-            //     return false;
-            // }
-            // if (password !== confirmPassword) {
-            //     alert("两次输入的密码不一致，请重新输入！");
-            //     return false;
-            // }
-            // if (!document.getElementById("agree").checked) {
-            //     alert("请勾选同意隐私政策！");
-            //     return false;
-            // }
+            var regex =  /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+            if (!regex.test(password)) {
+                alert("密码没有包含数字、大小写字母，且长度至少于8位,请重新输入！");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("两次输入的密码不一致，请重新输入！");
+                return false;
+            }
+            if (!document.getElementById("agree").checked) {
+                alert("请勾选同意隐私政策！");
+                return false;
+            }
             window.location.href = `./create_success.html?create-username=${username}&create-password=${password}`;
             return true;
         }
@@ -43,6 +43,7 @@
             <input name="create-password" id="create-password" type="password" placeholder="请输入密码" style="border-radius: 50px;position: absolute;top: 160px;margin: 50px;left: 35%;">
             <input name="create-password-repeat" id="create-password-repeat" type="password" placeholder="请再次输入密码" style="border-radius: 50px;position: absolute;top: 227px;margin: 50px;left: 35%;">
             <!-- 隐私政策 -->
+            <p>包含数字、大小写字母，且长度至少于8位</p>
             <input type="checkbox" id="agree" style="width: 3;height: 13px;position: absolute;top: 366px;left: 175px;">
             <p style="position: absolute;top: 350px;left:200px;">我已阅读《隐私政策》并同意</p>
             <!-- 注册-->
