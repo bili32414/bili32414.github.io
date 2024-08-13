@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>证书展示</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            user-select: none;
+        }
+
+        #div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(94, 94, 94);
+        }
+        #img {
+            max-height: 100%;
+            max-width: 100%;
+            min-width: 440px;
+            min-height: 600px;
+        }
+
+        #float {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #sy {
+            height: 100vh;
+            border: 1px solid red;
+        }
+
+        #logo {
+            position: relative;
+            opacity: .75;
+        }
+        #back{width: 2.5vw;
+            height: 2.5vw;
+            min-width: 40px;
+            min-height: 40px;
+            position: absolute;
+            top: 2.5vh;
+            left: 5vw;
+            padding: .5vw;
+            border-radius: 100px;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgba(200,200,200, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <img id="img" alt="证书图片" style="height: 100%;">
+    </div>
+    <div id="float">
+        <div id="sy">
+            <img src="logo.png" width="150vw" alt="" id="logo">
+            <img id="back" src="back.png" alt="返回上一页" onclick="window.history.back()+'/#contact'" title="返回上一页">
+        </div>
+    </div>
+    <script>
+        var img = document.getElementById('img');
+        img.src = "1.png"
+        var sy = document.getElementById('sy');
+        var logo = document.getElementById('logo');
+        let xSpeed = 1;
+        let ySpeed = 1;
+        // 监听图片加载完成，然后设置sy的宽度
+        img.onload = function () {
+            sy.style.width = img.clientWidth + 'px';
+            sy.style.maxWidth = img.clientWidth + 'px';
+            sy.style.height = img.clientHeight + 'px';
+            sy.style.maxHeight = img.clientHeight + 'px';
+
+            animate();
+
+            // 图片加载完成后开始动画
+
+        };
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // 移动图片
+            let leftPos = parseInt(logo.style.left) + xSpeed;
+            let topPos = parseInt(logo.style.top) + ySpeed;
+
+            // 检查水平碰撞
+            if (leftPos <= 0 || leftPos + logo.offsetWidth >= sy.offsetWidth) {
+                xSpeed = -xSpeed; // 反弹
+                leftPos += xSpeed; // 调整位置
+            }
+
+            // 检查垂直碰撞
+            if (topPos <= 0 || topPos + logo.offsetHeight >= sy.offsetHeight) {
+                ySpeed = -ySpeed; // 反弹
+                topPos += ySpeed; // 调整位置
+            }
+
+            logo.style.left = leftPos + 'px';
+            logo.style.top = topPos + 'px';
+        }
+        logo.onload = () => {
+            logo.style.left = 0;
+            logo.style.top = 0;
+            animate();
+        };
+
+
+
+
+    </script>
+</body>
+
+</html>
+<script>
+    // 检测窗口大小变化
+window.addEventListener('resize', function() {
+    // 当窗口大小变化时，检查新的窗口尺寸
+    var currentWidth = window.innerWidth;
+    var currentHeight = window.innerHeight;
+
+    // 检查当前窗口尺寸是否与之前的记录不同
+    if (currentWidth !== window.previousWidth || currentHeight !== window.previousHeight) {
+        // 更新记录的窗口尺寸
+        window.previousWidth = currentWidth;
+        window.previousHeight = currentHeight;
+
+        // 刷新页面
+        location.reload();
+    }
+});
+
+// 记录初始窗口尺寸
+window.previousWidth = window.innerWidth;
+window.previousHeight = window.innerHeight;
+
+// JavaScript
+document.getElementById('img').addEventListener('mousedown', function(event){
+    event.preventDefault(); // 阻止默认的鼠标按下行为
+});
+
+document.getElementById('img').addEventListener('dragstart', function(event){
+    event.preventDefault(); // 阻止拖动开始
+});
+// JavaScript
+document.getElementById('logo').addEventListener('mousedown', function(event){
+    event.preventDefault(); // 阻止默认的鼠标按下行为
+});
+
+document.getElementById('logo').addEventListener('dragstart', function(event){
+    event.preventDefault(); // 阻止拖动开始
+});
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+</script>

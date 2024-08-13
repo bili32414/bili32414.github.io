@@ -10,7 +10,7 @@
 </head>
 
 <body id="top">
-<div style="border: 1px solid pink;width: 99%;height: 99%;display: flex;margin-top: 0;justify-content: center;align-items: center;backdrop-filter: blur(10px);z-index: 2;position: fixed;" id="psdbox">
+<div style="border: 0;width: 99%;height: 99%;display: flex;margin-top: 0;justify-content: center;align-items: center;backdrop-filter: blur(10px);z-index: 2;position: fixed;" id="psdbox">
     <div style="width: 80vw;max-width: 500px;height: 30vh;border: 0;background: #ffffff86;border-radius: 50px;box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);backdrop-filter: blur(20px);">
         <div style="margin: 2vh;text-align: center;">
             <p style="font-size: 3vh;margin-bottom: 3vh;">授权码</p>
@@ -20,7 +20,6 @@
             <input type="text" style="height: 3vh;width: 20%;border: 0;border-radius: 10px;" id="psd" maxlength="5"> — <input type="text" style="height: 3vh;width: 20%;border: 0;border-radius: 10px;" id="psd1" maxlength="5">
             <p id="psdwrongshow" style="color: red;font-size: 2vh;">&nbsp;</p>
             <button style="padding: 1vh;border: 2px solid black;border-radius: 100px;background: #ffffff;font-size: 1vh;" onclick="checkpsd()">确定</button>
-            <button style="padding: 1vh;border: 2px solid white;border-radius: 0;color: white;background-color: #000000;font-size: 1vh;" onclick="history.back()">返回</button>
         </div>
     </div>
 </div>
@@ -37,30 +36,8 @@
 
         </ul>
     </nav>
-    <div class="main" style="z-index: 0;">
-        <img src="https://s1.ax1x.com/2023/09/04/pPranKA.jpg" alt="封面" width="100%">
-        <div class="wenzi">
-            <h1>重新安装Windows</h1>
-            <h5>2024年3月28日</h5>
-            <bq>Windows</bq>
-            <hr />
-
-            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
-            <h3 id="id1">测试</h3>
-            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
-            <h3 id="id2">测试</h3>
-            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
-            
-            
-            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
-
-            <p style="text-align: center;">-完-</p>
-            </p>
-            <p style="font-size: small;text-align: center;">有问题请联系作者</p>
-
-
-
-        </div>
+    <div class="main" style="z-index: 0;" id="main">
+      <p style="width: 100%;text-align: center;">未授权的访问</p>
     </div>
 
 </body>
@@ -151,8 +128,30 @@
     }
   });
 
+  var contants=`
+        <img src="https://s21.ax1x.com/2024/06/19/pkBmGz4.png" alt="封面" width="100%">
+        <div class="wenzi">
+            <h1>重新安装Windows</h1>
+            <h5>2024年3月28日</h5>
+            <bq>Windows</bq>
+            <hr />
+
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            <h3 id="id1">测试</h3>
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            <h3 id="id2">测试</h3>
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ 这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+            
+            
+            <p>这是一个测试页面，具体内容以正式版为准!abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 132456789 ~!@#$%^&*()_+ </p>
+
+            <p style="text-align: center;">-完-</p>
+            </p>
+            <p style="font-size: small;text-align: center;">有问题请联系作者</p>
 
 
+
+        </div>`
 
 
 
@@ -170,7 +169,7 @@
 
         // 显示 MD5 哈希值
         console.log("输入字符："+ code + "\n输入字符的md5：" + hash);
-        if (hash == "b0f8b3e58f093359fe1af416b5ea8ed6"){psdbox.style.display="none";console.log("mod5比对通过");}
+        if (hash == "b0f8b3e58f093359fe1af416b5ea8ed6"){psdbox.style.display="none";console.log("mod5比对通过");document.getElementById("main").innerHTML=contants}
         else if(code == ""){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码不能为空！";console.log("未输入，md5比对未通过，错误代码：授权码为空");}
         else if(code.length<10){inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码位数不够，已输入"+code.length+"位";console.log("位数不满,已输入"+code.length+"位");}
         else{inp.style.backgroundColor="rgba(255,0,0,.2)";inp1.style.backgroundColor="rgba(255,0,0,.2)";document.getElementById("psdwrongshow").innerHTML="授权码错误！";console.log("md5比对未通过,错误代码：授权码错误！");}
