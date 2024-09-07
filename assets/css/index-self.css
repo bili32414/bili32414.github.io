@@ -1,3 +1,64 @@
 red{
     color: #fa5b5e;
 }
+green{
+    color: #5eb95e;
+}
+blue{
+    color: #5e7efa;
+}
+yellow{
+    color: #fae05b;
+}
+orange{
+    color: #fa9b5b;
+}
+purple{
+    color: #9b5efa;
+}
+pink{
+    color: #fa5b9b;
+}
+gray{
+    color: #5e5e5e;
+}
+white{
+    color: #ffffff;
+}
+black{
+    color: #000000;
+}
+
+#language-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: gray;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    z-index: 9999;
+    transform: translateY(101%);
+    text-align: center;
+  }
+  #language-bar.visible {
+    transform: translateY(0);
+  }
+  .close {
+    /* position: absolute;
+    bottom: 4vh;
+    right: 10px; */
+    cursor: pointer;
+    font-size: 2em;
+  }
+  #language-bar .close:hover {
+    color: red; /* Change color on hover */
+  }
+  #language-bar .tip {
+    margin-left: 5px;
+    margin-right: 30px;
+  }

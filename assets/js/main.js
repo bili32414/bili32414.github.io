@@ -4,7 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -47,7 +47,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -56,7 +56,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '#navbar .nav-link', function(e) {
+  on('click', '#navbar .nav-link', function (e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -89,7 +89,7 @@
 
       if (!header.classList.contains('header-top')) {
         header.classList.add('header-top')
-        setTimeout(function() {
+        setTimeout(function () {
           sections.forEach((item) => {
             item.classList.remove('section-show')
           })
@@ -128,7 +128,7 @@
           }
         })
 
-        setTimeout(function() {
+        setTimeout(function () {
           initial_nav.classList.add('section-show')
         }, 350);
 
@@ -145,7 +145,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -196,9 +196,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -245,3 +245,75 @@
   });
 
 })()
+
+
+//------------------------------语言切换提示------------------------------
+function getBrowserLanguage() {
+  return navigator.language || navigator.userLanguage;
+}
+
+// 获取JSON文件中的提示信息
+function getLanguageMessage(lang) {
+  fetch('\\assets\\js\\message.json')
+    .then(response => response.json())
+    .then(data => {
+      const message = data[lang];
+      document.getElementById('tipmessage').innerHTML = message;
+      document.getElementById('language-bar').classList.remove('hidden');
+    })
+    .catch(error => console.error('Error loading the language file:', error));
+}
+
+function closeLanguageBar() {
+  document.getElementById('language-bar').classList.remove('visible');
+  document.getElementById('language-bar').classList.add('hidden');
+}
+
+// 切换语言的函数
+function switchLanguage(lang) {
+  const basePath = window.location.origin;
+  if (lang === 'zh') {
+    window.location.href = "https://www.324145238.xyz"
+  } else {
+    let url = basePath + '/language/' + lang;
+    window.location.href = url;
+  }
+}
+
+// 页面加载时执行
+document.addEventListener('DOMContentLoaded', function () {
+  const browserLang = getBrowserLanguage().substring(0, 2); // 获取语言代码的前两个字符
+  const pageLang = document.documentElement.lang.substring(0, 2); // 获取页面语言代码的前两个字符
+
+
+  console.log(browserLang,pageLang);
+  
+  if (browserLang !== pageLang) {
+    getLanguageMessage(browserLang);
+    document.getElementById('language-bar').classList.add('visible');
+  }
+});
+
+
+
+//------------------------------语言更新时间获取------------------------------
+const jsonUrl = '/assets/js/UpdateTime.json';
+
+// 使用fetch API获取.json文件
+fetch(jsonUrl)
+  .then(response => {
+    // 确保请求成功
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // 解析JSON数据
+  })
+  .then(data => {
+    // 使用获取到的数据更新网页上的元素
+    document.getElementById('LUTzh').textContent = data.zh;
+    document.getElementById('LUTen').textContent = data.en;
+    document.getElementById('LUTjp').textContent = data.ja;
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });

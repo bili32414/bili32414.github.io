@@ -1,0 +1,5 @@
+{
+    "zh": "检测到你的浏览器语言为中文，<br>你可以继续浏览或者点击<a href='javascript:void(0);' onclick='switchLanguage(\"zh\")'>跳转</a>以此来进入中文网站。",
+    "en": "Your browser language is detected as English,<br>You can continue browsing or click <a href='javascript:void(0);' onclick='switchLanguage(\"en\")'>switch</a> to enter the English website.",
+    "ja": "あなたのブラウザの言語は日本語と検出されました。<br>あなたは閲覧を続けるか、<a href='javascript:void(0);' onclick='switchLanguage(\"jp\")'>切り替え</a>をクリックして日本語のウェブサイトに入ることができます。"
+  }

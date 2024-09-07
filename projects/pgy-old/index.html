@@ -82,3 +82,34 @@
 		</script>
 	</body>
 </html>
+<script>
+	// 检测浏览器语言
+function detectLanguage() {
+  var language = navigator.language || navigator.userLanguage;
+  return language.toLowerCase();
+}
+
+// 替换页面内容
+function replaceContent() {
+  var content = "<p style='margin:0 auto;background-color: rgba(255, 255, 255, 0.5);text-align: center;font-size: larger;broder-radius: 10px;'>抱歉，我们不为除中国大陆之外的地区提供服务<br>Sorry, we do not provide services for regions other than Chinese Mainland<br>申し訳ありませんが、中国大陸以外の地域にはサービスを提供していません</p>";
+  document.body.innerHTML = content;
+  document.title="no access"
+}
+
+// 主函数
+function main() {
+  var browserLanguage = detectLanguage();
+
+  // 检查语言是否为中文
+  if (browserLanguage.startsWith('zh')) {
+    // 继续加载页面内容
+    console.log('Language is Chinese, loading content...');
+  } else {
+    // 替换页面内容
+    replaceContent();
+  }
+}
+
+// 调用主函数
+main();
+</script>
