@@ -269,16 +269,7 @@ function closeLanguageBar() {
   document.getElementById('language-bar').classList.add('hidden');
 }
 
-// 切换语言的函数
-function switchLanguage(lang) {
-  const basePath = window.location.origin;
-  if (lang === 'zh') {
-    window.location.href = "https://www.324145238.xyz"
-  } else {
-    let url = basePath + '/language/' + lang;
-    window.location.href = url;
-  }
-}
+
 
 // 页面加载时执行
 document.addEventListener('DOMContentLoaded', function () {
@@ -286,8 +277,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const pageLang = document.documentElement.lang.substring(0, 2); // 获取页面语言代码的前两个字符
 
 
-  console.log(browserLang,pageLang);
-  
   if (browserLang !== pageLang) {
     getLanguageMessage(browserLang);
     document.getElementById('language-bar').classList.add('visible');
@@ -317,3 +306,198 @@ fetch(jsonUrl)
   .catch(error => {
     console.error('There has been a problem with your fetch operation:', error);
   });
+//------------------------------判断手机------------------------------
+function isMobile() {
+  const ua = navigator.userAgent;
+  if (/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/i.test(ua)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//------------------------------欢迎界面设置------------------------------
+var Clanguage = (navigator.language || navigator.userLanguage).substring(0, 2);
+if (!localStorage.getItem('startup')) {
+  welcome();
+  console.log("welcome");
+} else {
+  const now = Date.now();
+
+  // 从localStorage获取存储的时间戳
+  const storedTimestamp = localStorage.getItem('timestamp');
+
+  // 检查是否存储了时间戳
+  if (storedTimestamp) {
+    // 计算时间差（单位：毫秒）
+    const diff = now - parseInt(storedTimestamp);
+
+    // 检查时间差是否超过7天（7 * 24 * 60 * 60 * 1000毫秒）
+    if (diff > 7 * 24 * 60 * 60 * 1000) {
+      // 超过7天，重新写入当前时间戳
+      welcome();
+    }
+  } else {
+    // 如果没有存储时间戳，写入当前时间戳
+    localStorage.setItem('finishtime', now.toString());
+    console.log('finishtime stored for the first time.');
+  }
+}
+//-------------------------------欢迎加载-------------------------------
+function welcome() {
+  if (!isMobile()) {
+    document.getElementById('t1stWelcomePage').style.display = "flex";
+    console.log("加载welcome窗口");
+    showWelcome();
+  }
+
+}
+//-------------------------------显示欢迎主界面-------------------------------
+function showWelcome() {
+  document.getElementById('t1WPC').innerHTML = `
+    <div id="t1WPCW" class="cx">
+      <h1>欢迎·Welcome</h1>
+      <div class="t1WPCWW">
+        <!-- 使用JavaScript动态添加style -->
+
+      </div>
+      <div class="step">
+        <button class="button" onclick="showLanguageStep()">下一步</button>
+      </div>
+    </div>`;
+  welcomeText();
+}
+function showLanguageStep() {
+  document.getElementById('t1WPCW').classList.remove('cx');
+  document.getElementById('t1WPCW').classList.add('xs');
+  setTimeout(function () {
+    document.getElementById('t1WPC').innerHTML = `
+      <div id="t1WPCW1" class="cx">
+        <h1>选择您的语言</h1>
+        <div id="Lamain">
+          <div id="LamainEN" onclick="cLanguage('en')">
+            <div class="icon" style="color:green;font-size:30px;"><i class="i bi-globe2"></i></div><br>
+            <p id="engselect">English</p>
+            </div>
+            <div id="LamainZH" onclick="cLanguage('zh')" >
+              <div class="icon"style="color:green;font-size:30px;"><i class="i bi-globe2"></i></div><br>
+              <p id="zhselect">简体中文</p>
+            </div>
+          <div id="LamainJA" onclick="cLanguage('ja')">
+            <div class="icon" style="color:green;font-size:30px;"><i class="i bi-globe2"></i></div><br>
+            <p id="jaselect">日本語</p>
+          </div>
+          
+        </div>
+        <h5>稍后您可以在菜单栏里的language里更改</h5>
+        <div class="step">
+          <button class="button" onclick="showUpdatesStep()">下一步</button>
+        </div>
+      </div>
+      `;
+
+    console.log("浏览器语言" + Clanguage);
+
+    if (Clanguage == 'zh') {
+      document.getElementById('zhselect').innerHTML = "简体中文<br>(当前浏览器语言)"; cLanguage('zh');
+    } else if (Clanguage == 'en') {
+      document.getElementById('engselect').innerHTML = "English<br>(Current browser language)"; cLanguage('en');
+    } else if (Clanguage == 'ja') {
+      document.getElementById('jaselect').innerHTML = "日本語<br>(現在のブラウザ言語)"; cLanguage('ja');
+    }
+  }, 1000);
+}
+
+function showUpdatesStep() {
+  document.getElementById('t1WPCW1').classList.remove('cx');
+  document.getElementById('t1WPCW1').classList.add('xs');
+  setTimeout(function () {
+    document.getElementById('t1WPC').innerHTML = `
+    <div id="t1WPCW2" class="cx">
+    <h1>最近更新·Recent updates</h1>
+      <div id="UpdateMD">
+      </div>
+        <div class="step">
+            <button class="button" onclick="complete()">Finish</button>
+        </div>
+    </div>
+      `;
+    SeeUpdateMD();
+  }, 1000);
+}
+
+function complete() {
+  document.getElementById('t1stWelcomePage').style.display = 'none';
+  localStorage.setItem('startup', 'true');
+  localStorage.setItem('finishtime', Date.now());
+}
+function welcomeText() {
+  const container = document.querySelector('.t1WPCWW');
+  const messages = [
+    '欢 迎',  // 中文
+    'Welcome',  // 英语
+    'Bienvenido',  // 西班牙语
+    'Hola!',  // 西班牙语
+    'Benvenuto',  // 意大利语
+    'ようこそ',  // 日语
+    '환영합니다',  // 韩语
+    'Bienvenue',  // 法语
+    'Cześć',  // 波兰语
+    'مرحبا',  // 阿拉伯语
+    'হ্যালো',  // 孟加拉语
+    'नमस्ते',  // 印地语
+    'Здравствуйте'  // 俄语
+  ];
+  messages.forEach((msg, index) => {
+    const div = document.createElement('div');
+    div.className = 'welcome-message';
+    div.textContent = msg;
+    div.style.animationName = 'slide';
+    div.style.animationDuration = '15s';
+    div.style.animationTimingFunction = 'linear';
+    div.style.animationIterationCount = 'infinite';
+    div.style.animationDelay = `${index * 2}s`; // 设置不同的延迟时间
+    // 随机生成纵向位置
+    div.style.setProperty('--vertical-offset', `${Math.random() * 400}px`);
+    container.appendChild(div);
+
+    if (!document.getElementById('t1WPCW')) {
+      return; // 如果找不到元素，停止循环
+    }
+  });
+}
+
+
+function cLanguage(lan) {
+  changeLanguage(lan);
+  Clanguage = lan;
+}
+
+
+function SeeUpdateMD() {
+  const UpdateMD = '/assets/js/UpdateMD.json';
+
+  // 使用fetch API获取.json文件
+  fetch(UpdateMD)
+    .then(response => {
+      // 确保请求成功
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json(); // 解析JSON数据
+    })
+    .then(data => {
+      console.log(Clanguage);
+
+      if (Clanguage == 'zh') {
+        document.getElementById('UpdateMD').innerHTML = data.zh;
+      } else if (Clanguage == 'en') {
+        document.getElementById('UpdateMD').innerHTML = data.en;
+      } else if (Clanguage == 'ja') {
+        document.getElementById('UpdateMD').innerHTML = data.ja;
+      }
+
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+}

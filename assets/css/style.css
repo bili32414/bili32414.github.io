@@ -76,7 +76,7 @@ h6 {
   height: 100vh;
   display: flex;
   align-items: center;
-  z-index: 997;
+  z-index: 5;
   overflow-y: auto;
 }
 
@@ -1221,4 +1221,157 @@ section .container {
 
 .pointer{
   cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Welcome Page
+--------------------------------------------------------------*/
+#t1stWelcomePage {
+  /* float: left; */
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  background-color: #47474758;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  
+}
+#t1WPC {
+  width: 50vw;
+  max-width: 1320px;
+  min-width: 500px;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.5); /* 设置背景颜色为半透明白色 */
+  border-radius: 25px; /* 设置圆角大小 */
+  backdrop-filter: blur(10px); /* 设置毛玻璃效果 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 可选，添加一点阴影以增强视觉效果 */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#t1WPCW,#t1WPCW1,#t1WPCW2{
+  width: 48vw;
+  max-width: 1320px;
+  min-width: 500px;
+  height: 58vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.t1WPCWW {
+  width: 50vw;
+  max-width: 1320px;
+  min-width: 500px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+}
+.welcome-message {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  color: #333;
+  will-change: transform, opacity; /* Optimize for animations */
+  font-family: "microsoft yahei";
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%) translateY(var(--vertical-offset));
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1500%) translateY(var(--vertical-offset));
+    opacity: 0;
+  }
+}
+/*---------------------欢迎文字结束----------------------*/
+@keyframes cx {
+  from{
+    transform: translate(10%,0);
+    opacity: 0;
+  }
+  
+  to {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+.cx{animation: cx 1s ease-out;}
+@keyframes xs {
+  from{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-10%,0);
+    opacity: 0;
+  }
+}
+.xs{animation: xs 1s ease-out;}
+@keyframes wc {
+  from{
+    
+  }
+}
+#Lamain {
+  width: 90%;
+  min-width: 500px;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#LamainZH,#LamainEN,#LamainJA {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+  padding: 25px;
+  border: 1px solid #989898;
+  margin: 0 2%;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 25px;
+  font-size: 100%;
+  text-align: center;
+}
+#UpdateMD{
+  width: 48vw;
+  max-width: 1320px;
+  min-width: 500px;
+  height: 58vh;
+}
+.step {
+  margin: 20px 0;
+}
+.button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #0056b3;
 }

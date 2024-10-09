@@ -1,0 +1,5 @@
+{
+    "zh": "<h3>Ver beta 10<p style='font-size:small'>2024年10月9日</p></h3><h4>修改：</h4><br>1.添加第一次进入欢迎界面。<br>2.更新了语言切换功能。<br>3.添加清除缓存选项。<br>4.修复了部分bug<br>5.优化了部分代码",
+    "en": "<h3>Ver beta 10<p style='font-size:small'>2024年10月9日</p></h3><h4>Updates：</h4><br>1.Added the first welcome interface.<br>2.Updated the language switching function.<br>3.Added a clear cache option.<br>4.Fixed some bugs.<br>5.Optimized some code",
+    "ja": "<h3>Ver ベータ 10<p style='font-size:small'>2024年10月9日</p></h3><h4>変更：</h4><br>1. 最初の起動時にウェルカム画面を追加しました。<br>2. 言語切り替え機能を更新しました。<br>3. キャッシュクリアオプションを追加しました。<br>4. いくつかのバグを修正しました。<br>5. いくつかのコードを最適化しました。"
+  }
