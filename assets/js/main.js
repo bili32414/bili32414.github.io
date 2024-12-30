@@ -501,3 +501,7 @@ function SeeUpdateMD() {
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
+// 判断访问的地区是否是中国，如果是就将id为TrunToChina显示
+  if (navigator.language.includes('zh')) {
+    document.getElementById('TurnToChina').style.display = 'flex';
+  }
